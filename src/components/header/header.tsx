@@ -8,7 +8,7 @@ export const Header = () => {
     <header className="header">
       <Box className="content">
         <Image className="logo" srcSet="/your-piece.svg" />
-        <Title>Seu Pedacinho</Title>
+        <Title className="title">Seu Pedacinho</Title>
       </Box>
     </header>
   );

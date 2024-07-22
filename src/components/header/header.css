@@ -1,6 +1,6 @@
 .header {
     height: 80px;
-    padding: 0 40px;
+    padding: 0 4%;
     box-shadow: 0 2px 6px 0 rgb(15, 15, 18);
     display: flex;
     align-items: center;
@@ -9,4 +9,12 @@
 .content {
     display: flex;
     align-items: center;
+}
+
+.title {
+    margin-left: 20px;
+}
+
+.header .logo {
+    width: 24px;
 }
