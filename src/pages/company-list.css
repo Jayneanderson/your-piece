@@ -1,0 +1,43 @@
+.company-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 0 4%;
+
+}
+
+.company-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.company-list-search-container {
+    padding-bottom: 20px;
+}
+
+.company-list-search {
+    width: 50%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #26272B;
+}
+
+.company-list-search:focus {
+    outline: 1px solid #26272B;
+}
+
+/* =================== Responsive =================== */
+
+@media (max-width: 700px) {
+    .company-list {
+        justify-content: space-between;
+    }
+
+    .company-list-search {}
+}
+
+@media (max-width: 470px) {
+    .company-list {}
+}
