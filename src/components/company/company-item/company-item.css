@@ -18,6 +18,7 @@
 
 .company-item .logo {
     width: 100%;
+    object-fit: cover;
     max-height: 171.1px;
     border-bottom-left-radius: 16px;
     border-end-end-radius: 16px;
@@ -28,12 +29,6 @@
     font-size: 16px;
     color: #ffffff;
 }
-
-/* .job-type-container {
-    border: 1px solid red;
-    background-color: rgb(93, 101, 112, 0.2);
-    padding: 0 2px;
-} */
 
 .job-type {
     font-size: 14px;

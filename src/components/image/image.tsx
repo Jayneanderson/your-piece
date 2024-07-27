@@ -1,5 +1,3 @@
-import './image.css';
-
 interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 export const Image = (props: Props) => {

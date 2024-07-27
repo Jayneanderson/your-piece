@@ -1,6 +1,6 @@
 import { Status } from '../enum/status-enum';
 import { JobType } from '../enum/type-enum';
-import { CompanyProps } from '../types/company';
+import { CompanyProps, Option } from '../types/types';
 
 export const data: CompanyProps[] = [
   {
@@ -38,4 +38,22 @@ export const data: CompanyProps[] = [
     urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
     urlInstagram: '',
   },
+  {
+    id: 4,
+    name: 'Matheus',
+    type: JobType.NetworkAnalyst,
+    status: Status.Active,
+    city: 'Algum local',
+    urlLogo: './logo/ivan-bispo-logo.jpg',
+    site: 'https://ivanjr.eti.br/',
+    urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
+    urlInstagram: '',
+  },
 ];
+
+export const allCities = data.map((item): Option => {
+  return {
+    label: item.city,
+    value: item.city,
+  };
+});

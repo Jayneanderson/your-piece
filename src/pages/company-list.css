@@ -7,6 +7,10 @@
 
 }
 
+.company-list-agroup {
+    width: 50%;
+}
+
 .company-list {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +22,7 @@
 }
 
 .company-list-search {
-    width: 50%;
+    width: 100%;
     padding: 12px 16px;
     border-radius: 12px;
     border: 1px solid #26272B;
@@ -33,6 +37,10 @@
 @media (max-width: 700px) {
     .company-list {
         justify-content: space-between;
+    }
+
+    .company-list-agroup {
+        width: 100%;
     }
 
     .company-list-search {}

@@ -1,4 +1,4 @@
-import { CompanyProps } from '../../../types/company';
+import { CompanyProps } from '../../../types/types';
 import { Box } from '../../box/box';
 import { Image } from '../../image/image';
 import { Title } from '../../titles/title';

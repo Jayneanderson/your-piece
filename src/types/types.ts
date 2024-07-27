@@ -20,3 +20,8 @@ export type FilterProps = {
   type: CompanyProps['type'];
   city: CompanyProps['city'];
 };
+
+export interface Option {
+  label: string;
+  value: string;
+}
