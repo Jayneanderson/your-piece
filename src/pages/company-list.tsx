@@ -1,82 +1,73 @@
 import { useEffect, useState } from 'react';
+
 import { Box } from '../components/box/box';
 import { Company } from '../components/company/company-item/company-item';
-import { Dropdown } from '../components/dropdown/dropdown';
 import { Input } from '../components/forms/input/input';
 import { List } from '../components/list/list';
-import { allCities, data } from '../data/data';
+import { SelectList } from '../components/select-list/select-list';
+
+import {
+  allCities,
+  data,
+  getUniqueCities as findUniqueCities,
+} from '../data/data';
 import { CompanyProps, Option } from '../types/types';
+
 import './company-list.css';
 
 export const CompanyList = () => {
-  const [searchValue, setSearchValue] = useState<string>('');
-  const [selectedCities, setSelectedCities] = useState<string[]>([]);
+  const [companyName, setCompanyName] = useState<string>('');
+  const [selectedCities, setSelectedCities] = useState<Option[]>([]);
   const [filtered, setFiltered] = useState<CompanyProps[]>([]);
 
   useEffect(() => {
     applyFilter();
-  }, [selectedCities, searchValue]);
+  }, [selectedCities, companyName, selectedCities]);
 
   const applyFilter = () => {
-    const filtered = hasFilter()
-      ? data?.filter(
-          (company) =>
-            selectedCities.includes(company.city) &&
-            company.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-      : data;
+    const selectedValues = selectedCities.map((option) => option.value);
 
-    setFiltered(filtered);
+    const result = data?.filter((company) => {
+      const matchesCity =
+        selectedValues.length > 0
+          ? selectedValues.includes(company.city)
+          : true;
+      const matchesName = companyName
+        ? company.name.toLowerCase().includes(companyName.toLowerCase())
+        : true;
+
+      return matchesCity && matchesName;
+    });
+
+    setFiltered(result);
   };
 
-  const hasFilter = (): boolean => {
-    return !!searchValue || selectedCities.length > 0;
-  };
-
-  // TODO: refatorar para retirar O(n²)
-  const getUniqueCities = (
-    options: Option[],
-    selecteds: string[]
-  ): Option[] => {
-    const citiesMap = new Map<Option['label'], Option['value']>();
-
-    const result = options.reduce<Option[]>((acc, option, i) => {
-      if (
-        !citiesMap.has(option.label) &&
-        !selecteds.find((selected) => selected === option.value)
-      ) {
-        citiesMap.set(option.label, option.value);
-        acc.push(option);
-      }
-
-      return acc;
-    }, []);
-
-    return result;
-  };
-
-  const handleSearchChange = (
+  const handleCompanyNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
     const { value } = event.target;
-    setSearchValue(value);
+    setCompanyName(value);
   };
 
   return (
     <Box className="company-list-container">
+      <p className="company-list-text">
+        Encontre empresas e pessoas empreendedoras de <strong>Cachoeira</strong>
+        . Algumas regiões serão inclusas.
+      </p>
       <Box className="company-list-agroup">
-        <Dropdown
-          options={getUniqueCities(allCities, selectedCities)}
-          setOptions={setSelectedCities}
-          selectdOptions={selectedCities}
+        <SelectList
+          options={findUniqueCities(allCities)}
+          selectedOptions={selectedCities}
+          placeholderLabel="Cidade"
           setSelectedOptions={setSelectedCities}
         />
         <Box className="company-list-search-container">
           <Input
             id="company-list-input-search"
             placeholder="Nome da empresa"
-            onChange={handleSearchChange}
-            value={searchValue}
+            onChange={handleCompanyNameChange}
+            value={companyName}
             className="company-list-search"
           />
         </Box>

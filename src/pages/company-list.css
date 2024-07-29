@@ -4,7 +4,11 @@
     gap: 8px;
     margin-top: 24px;
     padding: 0 4%;
+}
 
+.company-list-text {
+    color: #838896;
+    padding: 12px 0;
 }
 
 .company-list-agroup {
@@ -26,6 +30,13 @@
     padding: 12px 16px;
     border-radius: 12px;
     border: 1px solid #26272B;
+    color: rgb(245, 245, 245, 0.4);
+    font-size: 14px;
+}
+
+.company-list-search::placeholder {
+    color: rgb(245, 245, 245, 0.4);
+    font-size: 16px;
 }
 
 .company-list-search:focus {
@@ -34,7 +45,7 @@
 
 /* =================== Responsive =================== */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
     .company-list {
         justify-content: space-between;
     }
