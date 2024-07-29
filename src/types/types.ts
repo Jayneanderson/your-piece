@@ -13,6 +13,7 @@ export type CompanyProps = {
   urlLinkedin?: string;
   urlTikTok?: string;
   urlYouTube?: string;
+  urlWhatsApp?: string;
 };
 
 export type FilterProps = {

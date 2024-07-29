@@ -53,7 +53,7 @@ export const CompanyList = () => {
     <Box className="company-list-container">
       <p className="company-list-text">
         Encontre empresas e pessoas empreendedoras de <strong>Cachoeira</strong>
-        . Algumas regiões serão inclusas.
+        . Algumas regiões próximas serão inclusas futuramente.
       </p>
       <Box className="company-list-agroup">
         <SelectList

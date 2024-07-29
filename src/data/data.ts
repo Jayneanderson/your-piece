@@ -1,5 +1,4 @@
 import { Status } from '../enum/status-enum';
-import { JobType } from '../enum/type-enum';
 import { CompanyProps, Option } from '../types/types';
 
 export const data: CompanyProps[] = [
@@ -14,7 +13,6 @@ export const data: CompanyProps[] = [
     urlFacebook: 'https://pt-br.facebook.com/mcjaynedivanacasa',
     urlInstagram: 'https://www.instagram.com/mc_jaynne/',
     urlYouTube: 'https://www.youtube.com/channel/UCRxY1JNWFt3aZhU0hKFM3Zw',
-    urlTikTok: 'opa',
   },
   {
     id: 2,
@@ -27,27 +25,26 @@ export const data: CompanyProps[] = [
     urlFacebook: 'https://www.facebook.com/deise.cristtina',
     urlInstagram: 'https://www.instagram.com/deisecristtina.esc',
   },
-  {
-    id: 3,
-    name: 'JB Bispo',
-    type: JobType.NetworkAnalyst,
-    status: Status.Active,
-    city: 'Santo Amaro',
-    urlLogo: './logo/ivan-bispo-logo.jpg',
-    site: 'https://ivanjr.eti.br/',
-    urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
-    urlInstagram: '',
-  },
+  // {
+  //   id: 3,
+  //   name: 'JB Bispo',
+  //   type: JobType.NetworkAnalyst,
+  //   status: Status.Active,
+  //   city: 'Santo Amaro',
+  //   urlLogo: './logo/ivan-bispo-logo.jpg',
+  //   site: 'https://ivanjr.eti.br/',
+  //   urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
+  //   urlInstagram: '',
+  // },
   {
     id: 4,
-    name: 'Matheus',
-    type: JobType.NetworkAnalyst,
+    name: 'Ponto da Maniçoba',
+    type: 'Restaurante',
     status: Status.Active,
-    city: 'Algum local',
-    urlLogo: './logo/ivan-bispo-logo.jpg',
-    site: 'https://ivanjr.eti.br/',
-    urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
-    urlInstagram: '',
+    city: 'Cachoeira',
+    urlLogo: './logo/ponto-da-manicoba.png',
+    site: 'hhttps://app.cardapioweb.com/restaurante_ponto_da_manicoba',
+    urlWhatsApp: 'https://web.whatsapp.com/send?phone=5575991690160',
   },
 ];
 
