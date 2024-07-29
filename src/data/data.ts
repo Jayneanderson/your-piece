@@ -1,6 +1,8 @@
 import { Status } from '../enum/status-enum';
 import { CompanyProps, Option } from '../types/types';
 
+const basePath = 'your-piece';
+
 export const data: CompanyProps[] = [
   {
     id: 1,
@@ -8,7 +10,7 @@ export const data: CompanyProps[] = [
     type: 'Cantora',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: './logo/mc-jayne.jpeg',
+    urlLogo: `./${basePath}/logo/mc-jayne.jpeg`,
     site: 'https://onerpm.link/742253447290',
     urlFacebook: 'https://pt-br.facebook.com/mcjaynedivanacasa',
     urlInstagram: 'https://www.instagram.com/mc_jaynne/',
@@ -20,7 +22,7 @@ export const data: CompanyProps[] = [
     type: 'Escritora',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: './logo/deise-cristina-logo.jpg',
+    urlLogo: `./${basePath}/logo/deise-cristina-logo.jpg`,
     site: 'https://linktr.ee/DeiseCristtina',
     urlFacebook: 'https://www.facebook.com/deise.cristtina',
     urlInstagram: 'https://www.instagram.com/deisecristtina.esc',
@@ -31,7 +33,7 @@ export const data: CompanyProps[] = [
   //   type: JobType.NetworkAnalyst,
   //   status: Status.Active,
   //   city: 'Santo Amaro',
-  //   urlLogo: './logo/ivan-bispo-logo.jpg',
+  //   urlLogo: `./${basePath}/logo/ivan-bispo-logo.jpg`,
   //   site: 'https://ivanjr.eti.br/',
   //   urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
   //   urlInstagram: '',
@@ -42,7 +44,7 @@ export const data: CompanyProps[] = [
     type: 'Restaurante',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: './logo/ponto-da-manicoba.png',
+    urlLogo: `./${basePath}/logo/ponto-da-manicoba.png`,
     site: 'hhttps://app.cardapioweb.com/restaurante_ponto_da_manicoba',
     urlWhatsApp: 'https://web.whatsapp.com/send?phone=5575991690160',
   },
