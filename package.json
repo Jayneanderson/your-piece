@@ -2,7 +2,7 @@
   "name": "your-piece",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://Jayneanderson.github.com/your-piece",
+  "homepage": "https://jayneanderson.github.io/your-piece",
   "type": "module",
   "scripts": {
     "dev": "vite",
