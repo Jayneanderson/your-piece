@@ -10,6 +10,7 @@ import { allCities, data, getUniqueOptions } from '../data/data';
 import { CompanyProps, Option } from '../types/types';
 
 import './company-list.css';
+import { Banner } from '../components/banner/banner';
 import { Title } from '../components/titles/title';
 
 export const CompanyList = () => {
@@ -47,31 +48,33 @@ export const CompanyList = () => {
   };
 
   return (
-    <Box className="company-list-container">
-      <p className="company-list-text">
-        Encontre empresas e pessoas empreendedoras de <strong>Cachoeira</strong>
-        . Algumas regiões próximas serão inclusas futuramente.
-      </p>
-      <Box className="company-list-agroup">
-        <SelectList
-          options={findUniqueCities(allCities)}
-          selectedOptions={selectedCities}
-          placeholderLabel="Cidade"
-          setSelectedOptions={setSelectedCities}
-        />
-        <Box className="company-list-search-container">
-          <Input
-            id="company-list-input-search"
-            placeholder="Nome da empresa"
-            onChange={handleCompanyNameChange}
-            value={companyName}
-            className="company-list-search"
+    <>
+      <Banner />
+      <Box className="company-list-container">
+        <Title className="company-section-title" size="1">
+          Lista de Empresas
+        </Title>
+        <Box className="company-list-agroup">
+          <SelectList
+            options={getUniqueOptions(allCities)}
+            selectedOptions={selectedCities}
+            placeholderLabel="Cidade"
+            setSelectedOptions={setSelectedCities}
           />
+          <Box className="company-list-search-container">
+            <Input
+              id="company-list-input-search"
+              placeholder="Nome da empresa"
+              onChange={handleCompanyNameChange}
+              value={companyName}
+              className="company-list-search"
+            />
+          </Box>
         </Box>
+        <List listType="unordered" className="company-list">
+          {filtered?.map((item, i) => <Company key={i} {...item}></Company>)}
+        </List>
       </Box>
-      <List listType="unordered" className="company-list">
-        {filtered?.map((item, i) => <Company key={i} {...item}></Company>)}
-      </List>
-    </Box>
+    </>
   );
 };

@@ -55,7 +55,7 @@
 .social-medias {
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
+    gap: 6px;
 }
 
 /* ============= Responsive =============*/
@@ -71,7 +71,6 @@
     .company-content {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     .company-title {

@@ -4,6 +4,12 @@
     gap: 8px;
     margin-top: 24px;
     padding: 0 4%;
+    padding-bottom: 4%;
+}
+
+.company-section-title {
+    text-align: center;
+    padding: 8px;
 }
 
 .company-list-text {
