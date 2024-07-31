@@ -6,14 +6,11 @@ import { Input } from '../components/forms/input/input';
 import { List } from '../components/list/list';
 import { SelectList } from '../components/select-list/select-list';
 
-import {
-  allCities,
-  data,
-  getUniqueCities as findUniqueCities,
-} from '../data/data';
+import { allCities, data, getUniqueOptions } from '../data/data';
 import { CompanyProps, Option } from '../types/types';
 
 import './company-list.css';
+import { Title } from '../components/titles/title';
 
 export const CompanyList = () => {
   const [companyName, setCompanyName] = useState<string>('');

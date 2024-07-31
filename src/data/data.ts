@@ -45,8 +45,46 @@ export const data: CompanyProps[] = [
     status: Status.Active,
     city: 'Cachoeira',
     urlLogo: `./${basePath}/logo/ponto-da-manicoba.png`,
-    site: 'hhttps://app.cardapioweb.com/restaurante_ponto_da_manicoba',
-    urlWhatsApp: 'https://web.whatsapp.com/send?phone=5575991690160',
+    site: 'https://app.cardapioweb.com/restaurante_ponto_da_manicoba',
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992036994',
+  },
+  {
+    id: 5,
+    name: 'Club Burguer',
+    type: 'Hamburgueria',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: `./${basePath}/logo/club-burguer.png`,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991475058',
+    urlInstagram: 'https://www.instagram.com/cb.burguerr',
+  },
+  {
+    id: 6,
+    name: 'Léo Celular',
+    type: 'Assistência',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: `./${basePath}/logo/leo-celular.jpg`,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575982206751',
+    urlInstagram: 'https://www.instagram.com/leocelular8',
+  },
+  {
+    id: 7,
+    name: 'Ayabas Bonecas Africanas',
+    type: 'Artesanato',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: `./${basePath}/logo/ayabas-bonecas-africanas.jpeg`,
+    urlInstagram: 'https://www.instagram.com/ayabas_bonecas_africanas/',
+  },
+  {
+    id: 8,
+    name: 'Eliaellen Beauty',
+    type: 'Estética',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: `./${basePath}/logo/eliaellen-beauty.jpg`,
+    urlInstagram: 'https://www.instagram.com/eliaellen_beauty/',
   },
 ];
 
@@ -57,7 +95,7 @@ export const allCities = data.map((item): Option => {
   };
 });
 
-export const getUniqueCities = (options: Option[]): Option[] => {
+export const getUniqueOptions = (options: Option[]): Option[] => {
   const citiesMap = new Map<Option['label'], Option['value']>();
 
   const result = options.reduce<Option[]>((acc, option) => {
