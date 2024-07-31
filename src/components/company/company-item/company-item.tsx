@@ -12,7 +12,9 @@ export const Company = (props: CompanyProps) => {
         <Image className="logo" alt={props.name} srcSet={props.urlLogo} />
       </Box>
       <Box className="company-content">
-        <Title className="company-title">{props.name}</Title>
+        <Title size="2" className="company-title">
+          {props.name}
+        </Title>
         <Box className="job-type-container">
           <p className="job-type">{props.type}</p>
         </Box>
