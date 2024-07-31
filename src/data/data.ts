@@ -1,8 +1,6 @@
 import { Status } from '../enum/status-enum';
 import { CompanyProps, Option } from '../types/types';
 
-const basePath = 'your-piece';
-
 export const data: CompanyProps[] = [
   {
     id: 1,
@@ -10,7 +8,7 @@ export const data: CompanyProps[] = [
     type: 'Cantora',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/mc-jayne.jpeg`,
+    urlLogo: `./logo/mc-jayne.jpeg`,
     site: 'https://onerpm.link/742253447290',
     urlFacebook: 'https://pt-br.facebook.com/mcjaynedivanacasa',
     urlInstagram: 'https://www.instagram.com/mc_jaynne/',
@@ -22,7 +20,7 @@ export const data: CompanyProps[] = [
     type: 'Escritora',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/deise-cristina-logo.jpg`,
+    urlLogo: `./logo/deise-cristina-logo.jpg`,
     site: 'https://linktr.ee/DeiseCristtina',
     urlFacebook: 'https://www.facebook.com/deise.cristtina',
     urlInstagram: 'https://www.instagram.com/deisecristtina.esc',
@@ -44,7 +42,7 @@ export const data: CompanyProps[] = [
     type: 'Restaurante',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/ponto-da-manicoba.png`,
+    urlLogo: `./logo/ponto-da-manicoba.png`,
     site: 'https://app.cardapioweb.com/restaurante_ponto_da_manicoba',
     urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992036994',
   },
@@ -54,7 +52,7 @@ export const data: CompanyProps[] = [
     type: 'Hamburgueria',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/club-burguer.png`,
+    urlLogo: `./logo/club-burguer.png`,
     urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991475058',
     urlInstagram: 'https://www.instagram.com/cb.burguerr',
   },
@@ -64,7 +62,7 @@ export const data: CompanyProps[] = [
     type: 'Assistência',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/leo-celular.jpg`,
+    urlLogo: `./logo/leo-celular.jpg`,
     urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575982206751',
     urlInstagram: 'https://www.instagram.com/leocelular8',
   },
@@ -74,7 +72,7 @@ export const data: CompanyProps[] = [
     type: 'Artesanato',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/ayabas-bonecas-africanas.jpeg`,
+    urlLogo: `./logo/ayabas-bonecas-africanas.jpeg`,
     urlInstagram: 'https://www.instagram.com/ayabas_bonecas_africanas/',
   },
   {
@@ -83,7 +81,7 @@ export const data: CompanyProps[] = [
     type: 'Estética',
     status: Status.Active,
     city: 'Cachoeira',
-    urlLogo: `./${basePath}/logo/eliaellen-beauty.jpg`,
+    urlLogo: `./logo/eliaellen-beauty.jpg`,
     urlInstagram: 'https://www.instagram.com/eliaellen_beauty/',
   },
 ];
