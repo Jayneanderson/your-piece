@@ -67,11 +67,13 @@
 
 .select-list-items-container {
     width: 100%;
+    max-height: 200px;
     border: 1px solid #26272B;
     border-radius: 8px;
     position: absolute;
     z-index: 999;
     background-color: #121212;
+    overflow: auto;
 }
 
 .select-list-item-label {

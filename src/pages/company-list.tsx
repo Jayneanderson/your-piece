@@ -16,14 +16,18 @@ import { Title } from '../components/titles/title';
 export const CompanyList = () => {
   const [companyName, setCompanyName] = useState<string>('');
   const [selectedCities, setSelectedCities] = useState<Option[]>([]);
+  const [companyTypesSelected, setCompanyTypesSelected] = useState<Option[]>(
+    []
+  );
   const [filtered, setFiltered] = useState<CompanyProps[]>([]);
 
   useEffect(() => {
     applyFilter();
-  }, [selectedCities, companyName, selectedCities]);
+  }, [selectedCities, companyName, companyTypesSelected]);
 
   const applyFilter = () => {
     const selectedValues = selectedCities.map((option) => option.value);
+    const selectedTypes = companyTypesSelected.map((option) => option.value);
 
     const result = data?.filter((company) => {
       const matchesCity =
@@ -34,7 +38,10 @@ export const CompanyList = () => {
         ? company.name.toLowerCase().includes(companyName.toLowerCase())
         : true;
 
-      return matchesCity && matchesName;
+      const matchTypes =
+        selectedTypes.length > 0 ? selectedTypes.includes(company.type) : true;
+
+      return matchesCity && matchesName && matchTypes;
     });
 
     setFiltered(result);
@@ -52,15 +59,30 @@ export const CompanyList = () => {
       <Banner />
       <Box className="company-list-container">
         <Title className="company-section-title" size="1">
-          Lista de Empresas
+          Pessoas e empresas
         </Title>
         <Box className="company-list-agroup">
+          <SelectList
+            options={getUniqueOptions(
+              data.map((company) => {
+                return {
+                  value: company.type,
+                  label: company.type,
+                };
+              })
+            )}
+            selectedOptions={companyTypesSelected}
+            placeholderLabel="Tipo. Exemplo: Assistência"
+            setSelectedOptions={setCompanyTypesSelected}
+          />
+
           <SelectList
             options={getUniqueOptions(allCities)}
             selectedOptions={selectedCities}
             placeholderLabel="Cidade"
             setSelectedOptions={setSelectedCities}
           />
+
           <Box className="company-list-search-container">
             <Input
               id="company-list-input-search"

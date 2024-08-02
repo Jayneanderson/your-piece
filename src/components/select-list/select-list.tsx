@@ -3,7 +3,7 @@ import { Box } from '../box/box';
 import { Input } from '../forms/input/input';
 import './select-list.css';
 import { Option } from '../../types/types';
-import { isExistisInArray } from '../../data/data';
+import { isExistsValueInOptions } from '../../data/data';
 
 export interface Props {
   options: Array<Option>;
@@ -115,7 +115,10 @@ export const SelectList = ({
                       readOnly
                       id={item.label}
                       value={item.value}
-                      checked={isExistisInArray(selectedOptions, item)}
+                      checked={isExistsValueInOptions(
+                        selectedOptions,
+                        item.value
+                      )}
                       onClick={() => addOrRemoveItemToSeletectOptions(item)}
                     />
                     <span className="select-list-item-text">{item.label}</span>

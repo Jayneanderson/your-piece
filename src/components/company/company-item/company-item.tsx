@@ -12,28 +12,30 @@ export const Company = (props: CompanyProps) => {
         <Image className="logo" alt={props.name} srcSet={props.urlLogo} />
       </Box>
       <Box className="company-content">
-        <Title size="2" className="company-title">
-          {props.name}
-        </Title>
-        <Box className="job-type-container">
-          <p className="job-type">{props.type}</p>
-        </Box>
-        <Box className="company-address-container">
-          <svg
-            className="company-address-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M19.7654 7.81838C19.7654 3.06938 16.7189 0 11.9999 0C7.28088 0 4.23438 3.06938 4.23438 7.81838C4.23438 11.7769 10.351 19.7235 11.05 20.6126L11.9043 21.7106C8.326 21.72 5.44038 22.2281 5.44038 22.8548C5.44038 23.487 8.37887 23.9996 12.0036 23.9996C15.6284 23.9996 18.5669 23.487 18.5669 22.8548C18.5669 22.2278 15.6779 21.7193 12.0963 21.7106L12.9557 20.6126C13.6484 19.7179 19.7654 11.7713 19.7654 7.81838ZM9.48513 7.81313C9.48513 6.46163 10.6109 5.36588 11.9999 5.36588C13.3889 5.36588 14.5146 6.46163 14.5146 7.81313C14.5146 9.16463 13.3889 10.2604 11.9999 10.2604C10.6109 10.2604 9.48513 9.16463 9.48513 7.81313Z"
-              fill="#5D6570"
-            />
-          </svg>
+        <Box className="company-content-information">
+          <Title size="2" className="company-title">
+            {props.name}
+          </Title>
+          <Box className="company-job-type-container">
+            <p className="company-job-type">{props.type}</p>
+          </Box>
+          <Box className="company-address-container">
+            <svg
+              className="company-address-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.7654 7.81838C19.7654 3.06938 16.7189 0 11.9999 0C7.28088 0 4.23438 3.06938 4.23438 7.81838C4.23438 11.7769 10.351 19.7235 11.05 20.6126L11.9043 21.7106C8.326 21.72 5.44038 22.2281 5.44038 22.8548C5.44038 23.487 8.37887 23.9996 12.0036 23.9996C15.6284 23.9996 18.5669 23.487 18.5669 22.8548C18.5669 22.2278 15.6779 21.7193 12.0963 21.7106L12.9557 20.6126C13.6484 19.7179 19.7654 11.7713 19.7654 7.81838ZM9.48513 7.81313C9.48513 6.46163 10.6109 5.36588 11.9999 5.36588C13.3889 5.36588 14.5146 6.46163 14.5146 7.81313C14.5146 9.16463 13.3889 10.2604 11.9999 10.2604C10.6109 10.2604 9.48513 9.16463 9.48513 7.81313Z"
+                fill="#5D6570"
+              />
+            </svg>
 
-          <p className="company-address">{props.city}</p>
+            <p className="company-address">{props.city}</p>
+          </Box>
         </Box>
         <Box className="social-medias">
           {props?.site && (

@@ -8,7 +8,16 @@
 }
 
 .company-content {
+    height: 100%;
     padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.company-content-information {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-container {
@@ -29,7 +38,11 @@
     color: #ffffff;
 }
 
-.job-type {
+.company-job-type-container {
+    padding-top: 5px;
+}
+
+.company-job-type {
     font-size: 14px;
     font-weight: bold;
     color: #838896;
@@ -39,6 +52,7 @@
     width: auto;
     display: flex;
     align-items: center;
+    padding: 5px 0;
 }
 
 .company-address-icon {
@@ -48,7 +62,6 @@
 .company-address {
     font-size: 12px;
     color: #838896;
-    padding: 5px 0;
     margin-left: 4px;
 }
 
@@ -68,10 +81,7 @@
 
     .logo {}
 
-    .company-content {
-        display: flex;
-        flex-direction: column;
-    }
+    .company-content {}
 
     .company-title {
         font-size: 16px;
@@ -96,7 +106,7 @@
         border-radius: 16px;
     }
 
-    .job-type {
+    .company-job-type {
         font-size: 16px;
     }
 
