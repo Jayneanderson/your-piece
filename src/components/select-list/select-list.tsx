@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { isExistsValueInOptions } from '../../data/data';
+import { Option } from '../../types/types';
 import { Box } from '../box/box';
 import { Input } from '../forms/input/input';
 import './select-list.css';
-import { Option } from '../../types/types';
-import { isExistsValueInOptions } from '../../data/data';
 
-export interface Props {
+export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   options: Array<Option>;
   selectedOptions: Array<Option>;
   placeholderLabel: string;
@@ -65,7 +65,7 @@ export const SelectList = ({
           className="select-list-button"
           onClick={handleSelectList}
         >
-          <Box className="select-list-button-container">
+          <Box id="selectList" className="select-list-button-container">
             <Box className="select-list-button-label-content">
               <span className="select-list-button-label">
                 {hasItems(selectedOptions)
@@ -95,39 +95,47 @@ export const SelectList = ({
       </Box>
 
       {isOpen && hasItems(options) && (
-        <Box className="select-list-items-container">
-          <Input
-            className="select-list-search"
-            placeholder="Filtrar"
-            onChange={handleSearchValue}
-          />
-          <Box className="select-list-items-content">
-            {getFilterOptions(options)?.map((item, i) => {
-              return (
-                <Box className="select-list-item" key={i}>
-                  <label
-                    className="select-list-item-label"
-                    htmlFor={item.label}
-                  >
-                    <Input
-                      className="select-list-item-input"
-                      type="checkbox"
-                      readOnly
-                      id={item.label}
-                      value={item.value}
-                      checked={isExistsValueInOptions(
-                        selectedOptions,
-                        item.value
-                      )}
-                      onClick={() => addOrRemoveItemToSeletectOptions(item)}
-                    />
-                    <span className="select-list-item-text">{item.label}</span>
-                  </label>
-                </Box>
-              );
-            })}
+        <>
+          <Box
+            className="select-overlay"
+            onClick={() => setIsOpen(false)}
+          ></Box>
+          <Box className="select-list-items-container">
+            <Input
+              className="select-list-search"
+              placeholder="Filtrar"
+              onChange={handleSearchValue}
+            />
+            <Box className="select-list-items-content">
+              {getFilterOptions(options)?.map((item, i) => {
+                return (
+                  <Box className="select-list-item" key={i}>
+                    <label
+                      className="select-list-item-label"
+                      htmlFor={item.label}
+                    >
+                      <Input
+                        className="select-list-item-input"
+                        type="checkbox"
+                        readOnly
+                        id={item.label}
+                        value={item.value}
+                        checked={isExistsValueInOptions(
+                          selectedOptions,
+                          item.value
+                        )}
+                        onClick={() => addOrRemoveItemToSeletectOptions(item)}
+                      />
+                      <span className="select-list-item-text">
+                        {item.label}
+                      </span>
+                    </label>
+                  </Box>
+                );
+              })}
+            </Box>
           </Box>
-        </Box>
+        </>
       )}
     </Box>
   );

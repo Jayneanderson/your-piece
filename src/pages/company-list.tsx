@@ -57,7 +57,7 @@ export const CompanyList = () => {
   return (
     <>
       <Banner />
-      <Box className="company-list-container">
+      <section className="company-list-container">
         <Title className="company-section-title" size="1">
           Pessoas e empresas
         </Title>
@@ -77,6 +77,7 @@ export const CompanyList = () => {
           />
 
           <SelectList
+            id="selectListCity"
             options={getUniqueOptions(allCities)}
             selectedOptions={selectedCities}
             placeholderLabel="Cidade"
@@ -96,7 +97,7 @@ export const CompanyList = () => {
         <List listType="unordered" className="company-list">
           {filtered?.map((item, i) => <Company key={i} {...item}></Company>)}
         </List>
-      </Box>
+      </section>
     </>
   );
 };

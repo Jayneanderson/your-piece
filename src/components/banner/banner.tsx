@@ -21,15 +21,15 @@ export const Banner = () => {
         <Box className="banner-information-content">
           <Box className="banner-information">
             <Title className="banner-subtitle" size="1">
-              Encontre as empresas no
+              Encontre pessoas e empresas no
             </Title>
             <Title className="banner-title" size="1">
               Seu Pedacinho
             </Title>
             <Image className="banner-curve" srcSet={curve} />
             <p className="banner-text">
-              Encontre empresas e pessoas empreendedoras de{' '}
-              <strong>Cachoeira</strong> e região
+              Pessoas e empresas de <strong>Cachoeira</strong> e região estão
+              aqui
             </p>
           </Box>
           <Box>

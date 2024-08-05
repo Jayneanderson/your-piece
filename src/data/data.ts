@@ -102,11 +102,11 @@ export const allCities = data.map((item): Option => {
 });
 
 export const getUniqueOptions = (options: Option[]): Option[] => {
-  const citiesMap = new Map<Option['label'], Option['value']>();
+  const optionsMap = new Map<Option['label'], Option['value']>();
 
   const result = options.reduce<Option[]>((acc, option) => {
-    if (!citiesMap.has(option.label)) {
-      citiesMap.set(option.label, option.value);
+    if (!optionsMap.has(option.label)) {
+      optionsMap.set(option.label, option.value);
       acc.push(option);
     }
 
