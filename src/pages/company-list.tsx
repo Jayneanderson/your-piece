@@ -94,7 +94,7 @@ export const CompanyList = () => {
             />
           </Box>
         </Box>
-        <List listType="unordered" className="company-list">
+        <List listtype="unordered" className="company-list">
           {filtered?.map((item, i) => <Company key={i} {...item}></Company>)}
         </List>
       </section>
