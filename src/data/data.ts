@@ -9,6 +9,8 @@ import clubBurguer from '../../public/logo/club-burguer.png';
 import leoCelular from '../../public/logo/leo-celular.jpg';
 import ayabasBonecasAfricanas from '../../public/logo/ayabas-bonecas-africanas.jpeg';
 import luizCarreto from '../../public/logo/luiz-carreto.jpg';
+import misterDog from '../../public/logo/mister-dog.png';
+import reiDoBurguer from '../../public/logo/rei-do-burguer.jpg';
 
 export const data: CompanyProps[] = [
   {
@@ -101,6 +103,27 @@ export const data: CompanyProps[] = [
     city: 'Cachoeira',
     urlLogo: luizCarreto,
     urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992301480',
+  },
+  {
+    id: 10,
+    name: 'Mister Dog',
+    type: 'Carreto',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: misterDog,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992106174',
+    urlInstagram: 'https://www.instagram.com/mr.dog_cachoeira/',
+    site: 'https://www.canva.com/design/DAFkWA8VtIU/DkEFzdj4B4_lWHvNp46KWw/view?website#4',
+  },
+  {
+    id: 11,
+    name: 'Rei do Burguer',
+    type: 'Carreto',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: reiDoBurguer,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991158242',
+    urlInstagram: 'https://www.instagram.com/reidoburgercachoeira/',
   },
 ];
 
