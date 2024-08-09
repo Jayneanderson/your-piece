@@ -4,10 +4,11 @@ import { Box } from '../../box/box';
 import './list-type-bar.css';
 
 interface Props {
+  listType: ListType['type'];
   onListTypeClick: (type: ListType['type']) => void;
 }
 
-export const ListTypeBar = ({ onListTypeClick }: Props) => {
+export const ListTypeBar = ({ onListTypeClick, listType }: Props) => {
   const handleListTypeClick = (type: ListType['type']) => {
     onListTypeClick(type);
   };
@@ -16,7 +17,7 @@ export const ListTypeBar = ({ onListTypeClick }: Props) => {
     <Box className="list-type-container">
       <button
         type="button"
-        className="list-type-action"
+        className={`list-type-action${listType === 'card' ? ' list-type-active' : ''}`}
         name="asc"
         onClick={() => handleListTypeClick('card')}
       >
@@ -61,7 +62,7 @@ export const ListTypeBar = ({ onListTypeClick }: Props) => {
 
       <button
         type="button"
-        className="list-type-action"
+        className={`list-type-action${listType === 'row' ? ' list-type-active' : ''}`}
         name="desc"
         onClick={() => handleListTypeClick('row')}
       >

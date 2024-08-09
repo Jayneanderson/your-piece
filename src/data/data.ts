@@ -11,6 +11,8 @@ import ayabasBonecasAfricanas from '../../public/logo/ayabas-bonecas-africanas.j
 import luizCarreto from '../../public/logo/luiz-carreto.jpg';
 import misterDog from '../../public/logo/mister-dog.png';
 import reiDoBurguer from '../../public/logo/rei-do-burguer.jpg';
+import studioDanileSilva from '../../public/logo/studio-danile-silva.jpg';
+import rosanyCostaBeauty from '../../public/logo/rosany-costa-beauty.jpeg';
 
 export const data: CompanyProps[] = [
   {
@@ -107,7 +109,7 @@ export const data: CompanyProps[] = [
   {
     id: 10,
     name: 'Mister Dog',
-    type: 'Carreto',
+    type: 'Hot Dog',
     status: Status.Active,
     city: 'Cachoeira',
     urlLogo: misterDog,
@@ -118,12 +120,32 @@ export const data: CompanyProps[] = [
   {
     id: 11,
     name: 'Rei do Burguer',
-    type: 'Carreto',
+    type: 'Hamburgueria',
     status: Status.Active,
     city: 'Cachoeira',
     urlLogo: reiDoBurguer,
     urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991158242',
     urlInstagram: 'https://www.instagram.com/reidoburgercachoeira/',
+  },
+  {
+    id: 12,
+    name: 'Studio Daline Silva',
+    type: 'Manicure',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: studioDanileSilva,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575981267862',
+    urlInstagram: 'https://www.instagram.com/studiodalinesilva/',
+  },
+  {
+    id: 13,
+    name: 'Rosany Costa Beauty',
+    type: 'Estética',
+    status: Status.Active,
+    city: 'São Félix',
+    urlLogo: rosanyCostaBeauty,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991369113',
+    urlInstagram: 'https://www.instagram.com/rosanycostabeauty/',
   },
 ];
 

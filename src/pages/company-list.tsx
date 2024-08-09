@@ -72,7 +72,6 @@ export const CompanyList = () => {
           Pessoas e empresas
         </Title>
         <Box className="company-list-agroup">
-          <ListTypeBar onListTypeClick={updateListType} />
           <SelectList
             options={getUniqueOptionsByAttribute({
               data,
@@ -106,6 +105,7 @@ export const CompanyList = () => {
             />
           </Box>
         </Box>
+        <ListTypeBar onListTypeClick={updateListType} listType={listType} />
         <List
           listtype="unordered"
           className="company-list"

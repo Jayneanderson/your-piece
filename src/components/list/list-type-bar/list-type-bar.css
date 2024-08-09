@@ -1,6 +1,6 @@
 .list-type-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 16px;
   padding: 12px 0;
 }
@@ -9,6 +9,11 @@
   background-color: transparent;
   border: none;
 }
+
+.list-type-active path {
+  fill: #838896;
+}
+
 
 .list-type-icon {
   cursor: pointer;
