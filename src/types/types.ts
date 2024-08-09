@@ -26,3 +26,9 @@ export interface Option {
   label: string;
   value: string;
 }
+
+export type OrderBy = 'asc' | 'desc';
+
+export type ListType = {
+  type: 'card' | 'row';
+};

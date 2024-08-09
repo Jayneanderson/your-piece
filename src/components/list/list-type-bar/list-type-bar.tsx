@@ -1,7 +1,7 @@
 import { ListType } from '../../../types/types';
 import { Box } from '../../box/box';
 
-import './list-search-bar.css';
+import './list-type-bar.css';
 
 interface Props {
   onListTypeClick: (type: ListType['type']) => void;

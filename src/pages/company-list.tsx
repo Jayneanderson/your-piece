@@ -7,7 +7,7 @@ import { List } from '../components/list/list';
 import { SelectList } from '../components/select-list/select-list';
 
 import { data, getUniqueOptionsByAttribute } from '../data/data';
-import { CompanyProps, ListType, Option, OrderBy } from '../types/types';
+import { CompanyProps, ListType, Option } from '../types/types';
 
 import { Banner } from '../components/banner/banner';
 import { Title } from '../components/titles/title';
@@ -22,9 +22,9 @@ export const CompanyList = () => {
     []
   );
   const [filtered, setFiltered] = useState<CompanyProps[]>([]);
-  const [orderByCompanies, setOrderByCompanies] = useState<OrderBy | null>(
-    null
-  );
+  // const [orderByCompanies, setOrderByCompanies] = useState<OrderBy | null>(
+  //   null
+  // );
   const [listType, setListType] = useState<ListType['type']>('card');
 
   useEffect(() => {
@@ -50,9 +50,7 @@ export const CompanyList = () => {
       return matchesCity && matchesName && matchTypes;
     });
 
-    setFiltered(
-      orderBy({ data: result, attribute: 'name', order: orderByCompanies })
-    );
+    setFiltered(orderBy({ data: result, attribute: 'name', order: null }));
   };
 
   const handleCompanyNameChange = (
