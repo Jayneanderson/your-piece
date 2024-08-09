@@ -25,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: space-between;
 }
 
 .company-list-search-container {

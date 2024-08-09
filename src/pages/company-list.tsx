@@ -6,12 +6,14 @@ import { Input } from '../components/forms/input/input';
 import { List } from '../components/list/list';
 import { SelectList } from '../components/select-list/select-list';
 
-import { allCities, data, getUniqueOptions } from '../data/data';
-import { CompanyProps, Option } from '../types/types';
+import { data, getUniqueOptionsByAttribute } from '../data/data';
+import { CompanyProps, ListType, Option, OrderBy } from '../types/types';
 
-import './company-list.css';
 import { Banner } from '../components/banner/banner';
 import { Title } from '../components/titles/title';
+import { orderBy } from '../utils/order-by';
+import { ListTypeBar } from '../components/list/list-type-bar/list-type-bar';
+import './company-list.css';
 
 export const CompanyList = () => {
   const [companyName, setCompanyName] = useState<string>('');
@@ -20,6 +22,10 @@ export const CompanyList = () => {
     []
   );
   const [filtered, setFiltered] = useState<CompanyProps[]>([]);
+  const [orderByCompanies, setOrderByCompanies] = useState<OrderBy | null>(
+    null
+  );
+  const [listType, setListType] = useState<ListType['type']>('card');
 
   useEffect(() => {
     applyFilter();
@@ -44,7 +50,9 @@ export const CompanyList = () => {
       return matchesCity && matchesName && matchTypes;
     });
 
-    setFiltered(result);
+    setFiltered(
+      orderBy({ data: result, attribute: 'name', order: orderByCompanies })
+    );
   };
 
   const handleCompanyNameChange = (
@@ -52,6 +60,10 @@ export const CompanyList = () => {
   ): void => {
     const { value } = event.target;
     setCompanyName(value);
+  };
+
+  const updateListType = (newType: ListType['type']) => {
+    setListType(newType);
   };
 
   return (
@@ -62,15 +74,13 @@ export const CompanyList = () => {
           Pessoas e empresas
         </Title>
         <Box className="company-list-agroup">
+          <ListTypeBar onListTypeClick={updateListType} />
           <SelectList
-            options={getUniqueOptions(
-              data.map((company) => {
-                return {
-                  value: company.type,
-                  label: company.type,
-                };
-              })
-            )}
+            options={getUniqueOptionsByAttribute({
+              data,
+              attribute: 'type',
+              orderBy: 'asc',
+            })}
             selectedOptions={companyTypesSelected}
             placeholderLabel="Tipo. Exemplo: Assistência"
             setSelectedOptions={setCompanyTypesSelected}
@@ -78,7 +88,11 @@ export const CompanyList = () => {
 
           <SelectList
             id="selectListCity"
-            options={getUniqueOptions(allCities)}
+            options={getUniqueOptionsByAttribute({
+              data,
+              attribute: 'city',
+              orderBy: 'asc',
+            })}
             selectedOptions={selectedCities}
             placeholderLabel="Cidade"
             setSelectedOptions={setSelectedCities}
@@ -94,8 +108,18 @@ export const CompanyList = () => {
             />
           </Box>
         </Box>
-        <List listtype="unordered" className="company-list">
-          {filtered?.map((item, i) => <Company key={i} {...item}></Company>)}
+        <List
+          listtype="unordered"
+          className="company-list"
+          id={listType === 'card' ? 'card' : 'row'}
+        >
+          {filtered?.map((item, i) => (
+            <Company
+              id={listType === 'card' ? 'companyCard' : 'companyRow'}
+              company={item}
+              key={i}
+            ></Company>
+          ))}
         </List>
       </section>
     </>

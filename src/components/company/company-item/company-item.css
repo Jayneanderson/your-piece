@@ -7,12 +7,26 @@
     border-radius: 24px;
 }
 
+#companyRow.company-item {
+    width: 30%;
+    max-width: 100%;
+    flex-direction: row;
+}
+
 .company-content {
     height: 100%;
     padding: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#companyRow .company-content {
+    width: 100%;
+    max-height: 150px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .company-content-information {
@@ -24,6 +38,12 @@
     padding: 5px 5px 0 5px;
 }
 
+#companyRow .logo-container {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     width: 100%;
     object-fit: cover;
@@ -31,6 +51,12 @@
     border-bottom-left-radius: 16px;
     border-end-end-radius: 16px;
     border-radius: 16px;
+}
+
+#companyRow .logo {
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
 }
 
 .company-title {
@@ -65,13 +91,30 @@
     margin-left: 4px;
 }
 
-.social-medias {
+.company-content-social-medias {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     gap: 6px;
 }
 
+.social-media {
+    padding-left: 2px;
+}
+
+#companyRow .company-content-social-medias {
+    align-items: end;
+    flex-wrap: wrap-reverse;
+    gap: 2px;
+    justify-content: space-between;
+}
+
 /* ============= Responsive =============*/
+
+@media (max-width: 1280px) {
+    #companyRow.company-item {
+        width: 45%;
+    }
+}
 
 @media (max-width: 700px) {
     .company-item {
@@ -79,9 +122,13 @@
         width: 45%;
     }
 
-    .logo {}
+    #companyRow.company-item {
+        width: 100%;
+    }
 
-    .company-content {}
+    #companyRow .company-content {
+        gap: 6px;
+    }
 
     .company-title {
         font-size: 16px;
@@ -94,9 +141,15 @@
         width: 170px;
     }
 
-    /* .company-list {
-        justify-content: space-between;
-    } */
+    #companyRow.company-item {
+        width: 100%;
+    }
+
+    #companyRow .company-content-social-medias {
+        flex-wrap: wrap-reverse;
+        flex-direction: column;
+        align-items: end;
+    }
 
     .logo {
         width: 100%;
@@ -115,8 +168,10 @@
         color: #838896;
         padding: 5px 0;
     }
+}
 
-    .social-media svg {
-        width: 80px;
+@media (max-width: 400px) {
+    .company-item {
+        width: 100%;
     }
 }

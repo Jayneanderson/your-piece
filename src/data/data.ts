@@ -1,5 +1,5 @@
 import { Status } from '../enum/status-enum';
-import { CompanyProps, Option } from '../types/types';
+import { CompanyProps, Option, OrderBy } from '../types/types';
 
 import eliaellenBeauty from '../../public/logo/eliaellen-beauty.jpg';
 import mcJayne from '../../public/logo/mc-jayne.jpeg';
@@ -8,6 +8,7 @@ import pontoDaManicoba from '../../public/logo/ponto-da-manicoba.png';
 import clubBurguer from '../../public/logo/club-burguer.png';
 import leoCelular from '../../public/logo/leo-celular.jpg';
 import ayabasBonecasAfricanas from '../../public/logo/ayabas-bonecas-africanas.jpeg';
+import luizCarreto from '../../public/logo/luiz-carreto.jpg';
 
 export const data: CompanyProps[] = [
   {
@@ -92,6 +93,15 @@ export const data: CompanyProps[] = [
     urlLogo: eliaellenBeauty,
     urlInstagram: 'https://www.instagram.com/eliaellen_beauty/',
   },
+  {
+    id: 9,
+    name: 'Luiz Carreto',
+    type: 'Carreto',
+    status: Status.Active,
+    city: 'Cachoeira',
+    urlLogo: luizCarreto,
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992301480',
+  },
 ];
 
 export const allCities = data.map((item): Option => {
@@ -114,6 +124,39 @@ export const getUniqueOptions = (options: Option[]): Option[] => {
   }, []);
 
   return result;
+};
+
+export const getUniqueOptionsByAttribute = ({
+  data,
+  attribute,
+  orderBy,
+}: {
+  data: CompanyProps[];
+  attribute: keyof Pick<CompanyProps, 'city' | 'name' | 'type'>;
+  orderBy?: OrderBy;
+}): Option[] => {
+  const optionsMap = new Map<string, string>();
+
+  const result = data.reduce<Option[]>((acc, item) => {
+    if (!optionsMap.has(item[attribute])) {
+      const option = {
+        label: item[attribute],
+        value: item[attribute],
+      };
+
+      optionsMap.set(option.label, option.value);
+      acc.push(option);
+    }
+
+    return acc;
+  }, []);
+
+  if (!orderBy) return result;
+  if (orderBy === 'asc') {
+    return result.sort((a, b) => a.value.localeCompare(b.value));
+  }
+
+  return result.sort((a, b) => b.value.localeCompare(a.value));
 };
 
 export const isExistisInArray = <T>(

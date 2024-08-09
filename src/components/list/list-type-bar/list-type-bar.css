@@ -1,0 +1,19 @@
+.list-type-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.list-type-action {
+  background-color: transparent;
+  border: none;
+}
+
+.list-type-icon {
+  cursor: pointer;
+}
+
+.list-type-icon:hover path {
+  fill: #838896;
+}
