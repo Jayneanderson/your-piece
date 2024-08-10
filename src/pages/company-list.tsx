@@ -7,11 +7,11 @@ import { List } from '../components/list/list';
 import { SelectList } from '../components/select-list/select-list';
 
 import { data, getUniqueOptionsByAttribute } from '../data/data';
-import { CompanyProps, ListType, Option } from '../types/types';
+import { CompanyProps, ListType, Option, OrderBy } from '../types/types';
 
 import { Banner } from '../components/banner/banner';
 import { Title } from '../components/titles/title';
-import { orderBy } from '../utils/order-by';
+import { isValidOrderBy, orderBy } from '../utils/order-by';
 import { ListTypeBar } from '../components/list/list-type-bar/list-type-bar';
 import './company-list.css';
 
@@ -22,14 +22,12 @@ export const CompanyList = () => {
     []
   );
   const [filtered, setFiltered] = useState<CompanyProps[]>([]);
-  // const [orderByCompanies, setOrderByCompanies] = useState<OrderBy | null>(
-  //   null
-  // );
+  const [orderByCompanies, setOrderByCompanies] = useState<Option[]>([]);
   const [listType, setListType] = useState<ListType['type']>('card');
 
   useEffect(() => {
     applyFilter();
-  }, [selectedCities, companyName, companyTypesSelected]);
+  }, [selectedCities, companyName, companyTypesSelected, orderByCompanies]);
 
   const applyFilter = () => {
     const selectedValues = selectedCities.map((option) => option.value);
@@ -50,7 +48,13 @@ export const CompanyList = () => {
       return matchesCity && matchesName && matchTypes;
     });
 
-    setFiltered(orderBy({ data: result, attribute: 'name', order: null }));
+    setFiltered(
+      orderBy({
+        data: result,
+        attribute: 'name',
+        order: getOrderBy(orderByCompanies),
+      })
+    );
   };
 
   const handleCompanyNameChange = (
@@ -64,6 +68,12 @@ export const CompanyList = () => {
     setListType(newType);
   };
 
+  const getOrderBy = (options: Option[]) => {
+    if (options.length < 1 || !isValidOrderBy(options[0].value as OrderBy))
+      return null;
+    return options[0].value as OrderBy;
+  };
+
   return (
     <>
       <Banner />
@@ -73,6 +83,8 @@ export const CompanyList = () => {
         </Title>
         <Box className="company-list-agroup">
           <SelectList
+            isMultSelect
+            isFilter
             options={getUniqueOptionsByAttribute({
               data,
               attribute: 'type',
@@ -84,6 +96,8 @@ export const CompanyList = () => {
           />
 
           <SelectList
+            isMultSelect
+            isFilter
             id="selectListCity"
             options={getUniqueOptionsByAttribute({
               data,
@@ -94,18 +108,34 @@ export const CompanyList = () => {
             placeholderLabel="Cidade"
             setSelectedOptions={setSelectedCities}
           />
-
           <Box className="company-list-search-container">
             <Input
-              id="company-list-input-search"
+              id="companyListInputSearch"
               placeholder="Nome da empresa"
               onChange={handleCompanyNameChange}
               value={companyName}
               className="company-list-search"
             />
           </Box>
+          <Box className="company-list-bar">
+            <ListTypeBar onListTypeClick={updateListType} listType={listType} />
+            <Box className="company-list-order">
+              <SelectList
+                isMultSelect={false}
+                isFilter={false}
+                options={[
+                  { label: 'Sem ordenação', value: '' },
+                  { label: 'Nome crescente', value: 'asc' },
+                  { label: 'Nome decrescente', value: 'desc' },
+                ]}
+                selectedOptions={orderByCompanies}
+                placeholderLabel="Ordernar"
+                setSelectedOptions={setOrderByCompanies}
+                id="companySelectListOrder"
+              />
+            </Box>
+          </Box>
         </Box>
-        <ListTypeBar onListTypeClick={updateListType} listType={listType} />
         <List
           listtype="unordered"
           className="company-list"

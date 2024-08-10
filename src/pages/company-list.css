@@ -32,6 +32,20 @@
     padding-bottom: 20px;
 }
 
+.company-list-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.company-list-order {
+    width: 50%;
+}
+
+.select-list-container #companySelectListOrder {
+    min-width: 200px;
+}
+
 .company-list-search {
     width: 100%;
     padding: 12px 16px;

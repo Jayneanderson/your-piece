@@ -106,6 +106,10 @@
     margin-left: 6px;
 }
 
+.select-list-item-input-invisible {
+    display: none;
+}
+
 .select-list-item-text {
     padding: 0 12px;
     font-size: 16px;

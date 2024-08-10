@@ -40,14 +40,11 @@ export const data: CompanyProps[] = [
   },
   // {
   //   id: 3,
-  //   name: 'JB Bispo',
-  //   type: JobType.NetworkAnalyst,
+  //   name: 'Felipe Passos',
+  //   type: 'Design',
   //   status: Status.Active,
-  //   city: 'Santo Amaro',
-  //   urlLogo: `./${basePath}/logo/ivan-bispo-logo.jpg`,
-  //   site: 'https://ivanjr.eti.br/',
-  //   urlFacebook: 'https://www.facebook.com/JunniorBispoJB',
-  //   urlInstagram: '',
+  //   city: 'Cachoeira',
+  //   urlLogo: ,
   // },
   {
     id: 4,
@@ -96,6 +93,7 @@ export const data: CompanyProps[] = [
     city: 'Cachoeira',
     urlLogo: eliaellenBeauty,
     urlInstagram: 'https://www.instagram.com/eliaellen_beauty/',
+    urlWhatsApp: 'https://api.whatsapp.com/send?phone=75992903788',
   },
   {
     id: 9,

@@ -21,3 +21,7 @@ export const orderBy = <T>(params: Props<T>): T[] => {
 
   return params.data;
 };
+
+export const isValidOrderBy = (order: OrderBy) => {
+  return !!order;
+};

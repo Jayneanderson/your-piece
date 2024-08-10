@@ -9,6 +9,8 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   options: Array<Option>;
   selectedOptions: Array<Option>;
   placeholderLabel: string;
+  isMultSelect: boolean;
+  isFilter: boolean;
   setSelectedOptions: React.Dispatch<React.SetStateAction<Array<Option>>>;
 }
 
@@ -17,6 +19,8 @@ export const SelectList = ({
   selectedOptions,
   placeholderLabel,
   setSelectedOptions,
+  isMultSelect,
+  isFilter,
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [searchValue, setSeachValue] = useState<string>('');
@@ -31,15 +35,19 @@ export const SelectList = ({
   };
 
   const addOrRemoveItemToSeletectOptions = (option: Option): void => {
-    setSelectedOptions((prevSelectedOptions) => {
-      const exists = prevSelectedOptions.some(
-        (item) => item.value === option.value
-      );
+    if (isMultSelect) {
+      setSelectedOptions((prevSelectedOptions) => {
+        const exists = prevSelectedOptions.some(
+          (item) => item.value === option.value
+        );
 
-      return exists
-        ? prevSelectedOptions.filter((item) => item.value !== option.value)
-        : [...prevSelectedOptions, option];
-    });
+        return exists
+          ? prevSelectedOptions.filter((item) => item.value !== option.value)
+          : [...prevSelectedOptions, option];
+      });
+    } else {
+      setSelectedOptions([option]);
+    }
   };
 
   const getFilterOptions = (options: Option[]) => {
@@ -101,11 +109,13 @@ export const SelectList = ({
             onClick={() => setIsOpen(false)}
           ></Box>
           <Box className="select-list-items-container">
-            <Input
-              className="select-list-search"
-              placeholder="Filtrar"
-              onChange={handleSearchValue}
-            />
+            {isFilter && (
+              <Input
+                className="select-list-search"
+                placeholder="Filtrar"
+                onChange={handleSearchValue}
+              />
+            )}
             <Box className="select-list-items-content">
               {getFilterOptions(options)?.map((item, i) => {
                 return (
@@ -115,8 +125,8 @@ export const SelectList = ({
                       htmlFor={item.label}
                     >
                       <Input
-                        className="select-list-item-input"
-                        type="checkbox"
+                        className={`select-list-item-input${!isMultSelect ? ' select-list-item-input-invisible' : ''}`}
+                        type={`${isMultSelect ? 'checkbox' : 'radio'}`}
                         readOnly
                         id={item.label}
                         value={item.value}
@@ -126,6 +136,7 @@ export const SelectList = ({
                         )}
                         onClick={() => addOrRemoveItemToSeletectOptions(item)}
                       />
+
                       <span className="select-list-item-text">
                         {item.label}
                       </span>
@@ -140,3 +151,14 @@ export const SelectList = ({
     </Box>
   );
 };
+
+// export type SingleProps = {
+//   options: Array<Option>;
+//   selectedOption: Option;
+//   placeholderLabel: string;
+//   setSingleOption: (option: Option | null) => void;
+// };
+
+// const SingleSelectList = (props: SingleProps) => {
+//   return <></>;
+// };
