@@ -13,139 +13,156 @@ import misterDog from '../../public/logo/mister-dog.png';
 import reiDoBurguer from '../../public/logo/rei-do-burguer.jpg';
 import studioDanileSilva from '../../public/logo/studio-danile-silva.jpg';
 import rosanyCostaBeauty from '../../public/logo/rosany-costa-beauty.jpeg';
+import licorCachoeiraColonial from '../../public/logo/licor-cachoeira-colonial.png';
 
-export const data: CompanyProps[] = [
-  {
-    id: 1,
-    name: 'MC Jayne',
-    type: 'Cantora',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: mcJayne,
-    site: 'https://onerpm.link/742253447290',
-    urlFacebook: 'https://pt-br.facebook.com/mcjaynedivanacasa',
-    urlInstagram: 'https://www.instagram.com/mc_jaynne/',
-    urlYouTube: 'https://www.youtube.com/channel/UCRxY1JNWFt3aZhU0hKFM3Zw',
-  },
-  {
-    id: 2,
-    name: 'Deise Cristina',
-    type: 'Escritora',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: deiseCristina,
-    site: 'https://linktr.ee/DeiseCristtina',
-    urlFacebook: 'https://www.facebook.com/deise.cristtina',
-    urlInstagram: 'https://www.instagram.com/deisecristtina.esc',
-  },
-  // {
-  //   id: 3,
-  //   name: 'Felipe Passos',
-  //   type: 'Design',
-  //   status: Status.Active,
-  //   city: 'Cachoeira',
-  //   urlLogo: ,
-  // },
-  {
-    id: 4,
-    name: 'Ponto da Maniçoba',
-    type: 'Restaurante',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: pontoDaManicoba,
-    site: 'https://app.cardapioweb.com/restaurante_ponto_da_manicoba',
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992036994',
-  },
-  {
-    id: 5,
-    name: 'Club Burguer',
-    type: 'Hamburgueria',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: clubBurguer,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991475058',
-    urlInstagram: 'https://www.instagram.com/cb.burguerr',
-  },
-  {
-    id: 6,
-    name: 'Léo Celular',
-    type: 'Assistência',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: leoCelular,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575982206751',
-    urlInstagram: 'https://www.instagram.com/leocelular8',
-  },
-  {
-    id: 7,
-    name: 'Ayabas Bonecas Africanas',
-    type: 'Artesanato',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: ayabasBonecasAfricanas,
-    urlInstagram: 'https://www.instagram.com/ayabas_bonecas_africanas/',
-  },
-  {
-    id: 8,
-    name: 'Eliaellen Beauty',
-    type: 'Estética',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: eliaellenBeauty,
-    urlInstagram: 'https://www.instagram.com/eliaellen_beauty/',
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=75992903788',
-  },
-  {
-    id: 9,
-    name: 'Luiz Carreto',
-    type: 'Carreto',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: luizCarreto,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992301480',
-  },
-  {
-    id: 10,
-    name: 'Mister Dog',
-    type: 'Hot Dog',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: misterDog,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992106174',
-    urlInstagram: 'https://www.instagram.com/mr.dog_cachoeira/',
-    site: 'https://www.canva.com/design/DAFkWA8VtIU/DkEFzdj4B4_lWHvNp46KWw/view?website#4',
-  },
-  {
-    id: 11,
-    name: 'Rei do Burguer',
-    type: 'Hamburgueria',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: reiDoBurguer,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991158242',
-    urlInstagram: 'https://www.instagram.com/reidoburgercachoeira/',
-  },
-  {
-    id: 12,
-    name: 'Studio Daline Silva',
-    type: 'Manicure',
-    status: Status.Active,
-    city: 'Cachoeira',
-    urlLogo: studioDanileSilva,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575981267862',
-    urlInstagram: 'https://www.instagram.com/studiodalinesilva/',
-  },
-  {
-    id: 13,
-    name: 'Rosany Costa Beauty',
-    type: 'Estética',
-    status: Status.Active,
-    city: 'São Félix',
-    urlLogo: rosanyCostaBeauty,
-    urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991369113',
-    urlInstagram: 'https://www.instagram.com/rosanycostabeauty/',
-  },
-];
+export const data: CompanyProps[] = [];
+
+data.push({
+  id: data.length + 1,
+  name: 'MC Jayne',
+  type: 'Cantora',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: mcJayne,
+  site: 'https://onerpm.link/742253447290',
+  urlFacebook: 'https://pt-br.facebook.com/mcjaynedivanacasa',
+  urlInstagram: 'https://www.instagram.com/mc_jaynne/',
+  urlYouTube: 'https://www.youtube.com/channel/UCRxY1JNWFt3aZhU0hKFM3Zw',
+});
+
+data.push({
+  id: data.length + 1,
+  name: 'Deise Cristina',
+  type: 'Escritora',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: deiseCristina,
+  site: 'https://linktr.ee/DeiseCristtina',
+  urlFacebook: 'https://www.facebook.com/deise.cristtina',
+  urlInstagram: 'https://www.instagram.com/deisecristtina.esc',
+});
+
+// data.push({
+//   id: data.length + 1,
+//   name: 'Felipe Passos',
+//   type: 'Design',
+//   status: Status.Active,
+//   city: 'Cachoeira',
+//   urlLogo: ,
+// });
+
+data.push({
+  id: data.length + 1,
+  name: 'Ponto da Maniçoba',
+  type: 'Restaurante',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: pontoDaManicoba,
+  site: 'https://app.cardapioweb.com/restaurante_ponto_da_manicoba',
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992036994',
+});
+
+data.push({
+  id: data.length + 1,
+  name: 'Club Burguer',
+  type: 'Hamburgueria',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: clubBurguer,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991475058',
+  urlInstagram: 'https://www.instagram.com/cb.burguerr',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Léo Celular',
+  type: 'Assistência',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: leoCelular,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575982206751',
+  urlInstagram: 'https://www.instagram.com/leocelular8',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Ayabas Bonecas Africanas',
+  type: 'Artesanato',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: ayabasBonecasAfricanas,
+  urlInstagram: 'https://www.instagram.com/ayabas_bonecas_africanas/',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Eliaellen Beauty',
+  type: 'Estética',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: eliaellenBeauty,
+  urlInstagram: 'https://www.instagram.com/eliaellen_beauty/',
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=75992903788',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Luiz Carreto',
+  type: 'Carreto',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: luizCarreto,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992301480',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Mister Dog',
+  type: 'Hot Dog',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: misterDog,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575992106174',
+  urlInstagram: 'https://www.instagram.com/mr.dog_cachoeira/',
+  site: 'https://www.canva.com/design/DAFkWA8VtIU/DkEFzdj4B4_lWHvNp46KWw/view?website#4',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Rei do Burguer',
+  type: 'Hamburgueria',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: reiDoBurguer,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991158242',
+  urlInstagram: 'https://www.instagram.com/reidoburgercachoeira/',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Studio Daline Silva',
+  type: 'Manicure',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: studioDanileSilva,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575981267862',
+  urlInstagram: 'https://www.instagram.com/studiodalinesilva/',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Rosany Costa Beauty',
+  type: 'Estética',
+  status: Status.Active,
+  city: 'São Félix',
+  urlLogo: rosanyCostaBeauty,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=5575991369113',
+  urlInstagram: 'https://www.instagram.com/rosanycostabeauty/',
+});
+data.push({
+  id: data.length + 1,
+  name: 'Licor Cachoeira Colonial',
+  type: 'Bebidas',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: licorCachoeiraColonial,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=557534255490',
+  urlInstagram: 'https://www.instagram.com/licorcachoeiracolonial/',
+});
+
+console.log(data);
 
 export const allCities = data.map((item): Option => {
   return {
