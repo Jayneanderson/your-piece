@@ -3,7 +3,7 @@
   <h1 align="center">Seu Pedacinho</h1>
   <p>Encontre pessoas e empresas de Cachoeira e região</p>
   <p align="center">
-    <a align="center" href="https://jayneanderson.github.io/your-piece" target="blank">Acesse o site oficial</a>
+    <a align="center" href="https://jayneanderson.github.io/your-piece" target="_blank">Acesse o site oficial</a>
   </p>
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="Badge divido em duas partes, sendo o lado esquerdo composto por 70% de cinza com o nome License na cor branca e do lado direito na cor verde cana escrito MIT com branco">
 </div>
@@ -21,9 +21,9 @@
 
 <h2 id="goal">🍫 Seu Pedacinho</h2>
 <p>Este repositório tem como objetivo armazenar o código do front-end da aplicação 
-  <a href="https://jayneanderson.github.io/your-piece" target="blank">Seu Pedacinho
+  <a href="https://jayneanderson.github.io/your-piece" target="_blank">Seu Pedacinho
   </a>, cujo objetivo é destacar e concentrar pessoas empreendedoras e empresas pequenas da cidade de
-  <a href="https://pt.wikipedia.org/wiki/Cachoeira_(Bahia)" target="blank">Cachoeira - BA
+  <a href="https://pt.wikipedia.org/wiki/Cachoeira_(Bahia)" target="_blank">Cachoeira - BA
   </a> e região.
 </p>
 <h2 id="install">Como iniciar o projeto localmente</h2>
@@ -66,12 +66,16 @@
       </ul>
     </li>
     <li>[x] Responsividade</li>
+    <li>[ ] Adicionar animação ao selecionar botão iniciar</li>
+    <li>[ ] Adicionar função de cards favoritos</li>
+    <li>[ ] Adicionar card destaque da semana</li>
     <li>[ ] Recursos de acessibilidade</li>
     </ul>
   </li>
     <li>[ ] <b>Ajustes</b>
       <ul>
-        <li>[ ] Ajustar distribuição de cards</li>
+        <li>[ ] Distribuição de cards</li>
+        <li>[ ] Opção de ordenação</li>
       </ul>
     </li>
 </ul>
@@ -106,13 +110,13 @@
 <h2 id="autor">🤖‍ Autor</h2>
 <p>Me chama para tomar um café:</p>
 <p>
-  <a href="https://www.linkedin.com/in/jayneandersonn/">
+  <a href="https://www.linkedin.com/in/jayneandersonn/" target="_blank">
     <img
       src="https://img.shields.io/badge/-Jayneanderson-blue?style=flat-square&amp;logo=Linkedin&amp;logoColor=white"
-      alt="Linkedin Badge"
-    >
-    </a>
+      alt="Linkedin Badge">
+  </a>
   <a
-    href="mailto:jayneandersonn@gmail.com"><img src="https://img.shields.io/badge/-jayneandersonn@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:jayneandersonn@gmail.com" alt="Gmail Badge">
+    href="mailto:jayneandersonn@gmail.com">
+    <img src="https://img.shields.io/badge/-jayneandersonn@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:jayneandersonn@gmail.com" alt="Gmail Badge">
   </a>
 </p>
