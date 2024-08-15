@@ -14,6 +14,7 @@ import reiDoBurguer from '../../public/logo/rei-do-burguer.jpg';
 import studioDanileSilva from '../../public/logo/studio-danile-silva.jpg';
 import rosanyCostaBeauty from '../../public/logo/rosany-costa-beauty.jpeg';
 import licorCachoeiraColonial from '../../public/logo/licor-cachoeira-colonial.png';
+import ivanJrConsultoria from '../../public/logo/ivanjr-consultoria.jpeg';
 
 export const data: CompanyProps[] = [];
 
@@ -40,6 +41,28 @@ data.push({
   site: 'https://linktr.ee/DeiseCristtina',
   urlFacebook: 'https://www.facebook.com/deise.cristtina',
   urlInstagram: 'https://www.instagram.com/deisecristtina.esc',
+});
+
+data.push({
+  id: data.length + 1,
+  name: 'Licor Cachoeira Colonial',
+  type: 'Bebidas',
+  status: Status.Active,
+  city: 'Cachoeira',
+  urlLogo: licorCachoeiraColonial,
+  urlWhatsApp: 'https://api.whatsapp.com/send?phone=557534255490',
+  urlInstagram: 'https://www.instagram.com/licorcachoeiracolonial/',
+});
+
+data.push({
+  id: data.length + 1,
+  name: 'Ivanjr - Consultoria em TIC',
+  type: 'TI',
+  status: Status.Active,
+  city: 'Santo Amaro',
+  urlLogo: ivanJrConsultoria,
+  urlInstagram: 'https://www.instagram.com/ivannjr__/',
+  urlLinkedin: 'https://www.linkedin.com/in/ivan-jr/',
 });
 
 // data.push({
